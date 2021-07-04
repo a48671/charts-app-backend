@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const PORT = 3333;
-const temperature = require('./db/temperature.json');
-const precipitation = require('./db/precipitation.json');
+const temperature = require('./db/temperature.js');
+const precipitation = require('./db/precipitation.js');
 const { getDataByDateRange } = require('./utils');
 
 const app = express();
