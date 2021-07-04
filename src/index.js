@@ -11,14 +11,20 @@ app.use(cors());
 
 app.get('/temperature', (req, res) => {
     const { start, end } = req.query;
-
-    res.json({ data: getDataByDateRange(temperature, start, end) });
+    try {
+        res.json({ data: getDataByDateRange(temperature, start, end) });
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 app.get('/precipitation', (req, res) => {
     const { start, end } = req.query;
-
-    res.json({ data: getDataByDateRange(precipitation, start, end) });
+    try {
+        res.json({ data: getDataByDateRange(precipitation, start, end) });
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 app.listen(PORT, () => {
