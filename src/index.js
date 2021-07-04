@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const PORT = 3333;
+const PORT = process.env.PORT || 8080;
 const temperature = require('./db/temperature.js');
 const precipitation = require('./db/precipitation.js');
 const { getDataByDateRange } = require('./utils');
